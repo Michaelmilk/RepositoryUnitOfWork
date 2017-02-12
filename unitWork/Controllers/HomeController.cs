@@ -9,17 +9,18 @@ namespace unitWork.Controllers
 {
     public class HomeController : Controller
     {
+        static int refreshTimes = 1;
         public ActionResult Index()
         {
             StoresController storeCtrl = new StoresController();
             var store = new Store()
             {
-                Name = "bookstoe",
+                Name = $"bookstoe{refreshTimes}",
                 Desc = "book store"
             };
             var book = new Book()
             {
-                Name = "book",
+                Name = $"book{refreshTimes++}",
                 Desc = "book"
             };
             storeCtrl.PostStore(store);
