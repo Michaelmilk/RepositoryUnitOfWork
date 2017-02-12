@@ -24,8 +24,9 @@ namespace unitWork.Models
         public void Register<T>(IRepository<T> repository) where T : class
         {
             var key = typeof(T);
-            if (repositoryTable.ContainsKey(key))
-                repositoryTable[key] = repository;
+            //if (repositoryTable.ContainsKey(key))
+            //    repositoryTable[key] = repository;
+            repositoryTable[key] = repository;
         }
 
 
